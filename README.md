@@ -323,12 +323,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-
-**Built for the MLOps community**
-
----
-
 **Author:** [Mohammed Cherkaoui](https://github.com/mohammed761-dl)
 
 </div>
