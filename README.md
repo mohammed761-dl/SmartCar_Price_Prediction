@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚗 CarMarket Pro: AI-Powered Price Prediction Service
+# CarMarket Pro: AI-Powered Price Prediction Service
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -10,49 +10,49 @@
 **A production-grade Machine Learning microservice for intelligent vehicle valuations.**  
 _From exploratory data analysis to containerized deployment — a complete MLOps workflow._
 
-[Features](#-key-features) • [Architecture](#-project-architecture) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Docker](#-docker-deployment)
+[Features](#key-features) • [Architecture](#project-architecture) • [Quick Start](#quick-start) • [API Reference](#api-reference) • [Docker](#docker-deployment)
 
 </div>
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-| Feature                       | Description                                               |
-| ----------------------------- | --------------------------------------------------------- |
-| 🤖 **ML-Powered Predictions** | Random Forest Regressor trained on 2,000+ vehicle records |
-| 💱 **Currency Normalization** | Automatic PKR → USD conversion for global accessibility   |
-| 🐳 **Container-Ready**        | Production Dockerfile with optimized layer caching        |
-| 📡 **RESTful API**            | FastAPI with automatic OpenAPI/Swagger documentation      |
-| 🔧 **Dynamic Pathing**        | Environment-agnostic model loading (Windows/Linux/Docker) |
+| Feature                    | Description                                               |
+| -------------------------- | --------------------------------------------------------- |
+| **ML-Powered Predictions** | Random Forest Regressor trained on 2,000+ vehicle records |
+| **Currency Normalization** | Automatic PKR → USD conversion for global accessibility   |
+| **Container-Ready**        | Production Dockerfile with optimized layer caching        |
+| **RESTful API**            | FastAPI with automatic OpenAPI/Swagger documentation      |
+| **Dynamic Pathing**        | Environment-agnostic model loading (Windows/Linux/Docker) |
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```text
 SmartCar_Price_Prediction/
 │
-├── 📁 research/                    # 🔬 The Research Lab
-│   ├── car_dataset_2000_rows.csv   # Raw training data
-│   └── Smartcar_price_predection.ipynb  # EDA & Model Training
+├── research/                           # Research & Development
+│   ├── car_dataset_2000_rows.csv       # Raw training data
+│   └── Smartcar_price_predection.ipynb # EDA & Model Training
 │
-├── 📁 app/                         # 🚀 Production API
-│   ├── main.py                     # FastAPI application
-│   ├── requirements.txt            # Python dependencies
-│   └── 📁 models/                  # Serialized ML Artifacts
-│       ├── car_price_model.pkl     # Trained Random Forest
-│       └── label_encoders.pkl      # Categorical encoders
+├── app/                                # Production API
+│   ├── main.py                         # FastAPI application
+│   ├── requirements.txt                # Python dependencies
+│   └── models/                         # Serialized ML Artifacts
+│       ├── car_price_model.pkl         # Trained Random Forest
+│       └── label_encoders.pkl          # Categorical encoders
 │
-├── 🐳 Dockerfile                   # Container configuration
-└── 📄 README.md                    # You are here
+├── Dockerfile                          # Container configuration
+└── README.md
 ```
 
 ---
 
-## 🧪 The ML Journey
+## The ML Journey
 
-### 📊 Phase 1: Data Discovery & Integrity
+### Phase 1: Data Discovery & Integrity
 
 | Aspect                   | Finding                       | Action Taken                                    |
 | ------------------------ | ----------------------------- | ----------------------------------------------- |
@@ -61,20 +61,20 @@ SmartCar_Price_Prediction/
 | **Categorical Features** | Brand, Model, Fuel Type, etc. | Applied `LabelEncoder` transformation           |
 | **Outlier Detection**    | Skewed price distribution     | Used **Boxplots (Mustage Graphs)** for analysis |
 
-### 🧠 Phase 2: Model Selection & Rationale
+### Phase 2: Model Selection & Rationale
 
 We evaluated multiple regression approaches before selecting our production model:
 
-| Model                       | Pros                                      | Cons                                        | Verdict                   |
-| --------------------------- | ----------------------------------------- | ------------------------------------------- | ------------------------- |
-| **Linear Regression**       | Simple, interpretable                     | Cannot capture non-linear depreciation      | ❌ Too simplistic         |
-| **XGBoost**                 | High accuracy, handles complexity         | Overkill for dataset size, slower inference | ❌ Unnecessary complexity |
-| **Random Forest Regressor** | Handles non-linearity, robust to outliers | Slightly larger model size                  | ✅ **Selected**           |
+| Model                       | Pros                                      | Cons                                        | Verdict                |
+| --------------------------- | ----------------------------------------- | ------------------------------------------- | ---------------------- |
+| **Linear Regression**       | Simple, interpretable                     | Cannot capture non-linear depreciation      | Too simplistic         |
+| **XGBoost**                 | High accuracy, handles complexity         | Overkill for dataset size, slower inference | Unnecessary complexity |
+| **Random Forest Regressor** | Handles non-linearity, robust to outliers | Slightly larger model size                  | **Selected**           |
 
 > **Why Random Forest?**  
 > Car depreciation is inherently **non-linear** — a vehicle doesn't lose value at a constant rate. Random Forest's ensemble of decision trees captures these complex relationships while remaining robust against overfitting on our 2,000-row dataset.
 
-### 🔄 Phase 3: Feature Engineering Pipeline
+### Phase 3: Feature Engineering Pipeline
 
 ```python
 # Categorical columns transformed via LabelEncoder
@@ -90,7 +90,7 @@ categorical_features = [
 
 ---
 
-## 🔌 API Architecture & DevOps Integration
+## API Architecture & DevOps Integration
 
 ### Dynamic Model Loading
 
@@ -123,7 +123,7 @@ usd_price = raw_prediction / 280
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -147,11 +147,11 @@ pip install -r app/requirements.txt
 uvicorn app.main:app --reload
 ```
 
-🌐 **API Documentation:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+**API Documentation:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Build the Image
 
@@ -183,7 +183,7 @@ Expected response:
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### `GET /`
 
@@ -237,7 +237,7 @@ curl -X POST "http://localhost:8000/predict" \
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer                | Technology                   |
 | -------------------- | ---------------------------- |
@@ -250,23 +250,23 @@ curl -X POST "http://localhost:8000/predict" \
 
 ---
 
-## 📈 Future Roadmap
+## Future Roadmap
 
-- [ ] 🔄 Model retraining pipeline with MLflow tracking
-- [ ] 📊 Prometheus metrics endpoint for monitoring
-- [ ] 🧪 A/B testing infrastructure for model comparison
-- [ ] 🌍 Multi-currency support via exchange rate API
-- [ ] 📦 Kubernetes Helm chart for orchestration
+- [ ] Model retraining pipeline with MLflow tracking
+- [ ] Prometheus metrics endpoint for monitoring
+- [ ] A/B testing infrastructure for model comparison
+- [ ] Multi-currency support via exchange rate API
+- [ ] Kubernetes Helm chart for orchestration
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -274,6 +274,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Built with ❤️ for the MLOps community**
+**Built for the MLOps community**
 
 </div>
