@@ -185,7 +185,7 @@ usd_price = raw_prediction / 280
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/SmartCar_Price_Prediction.git
+git clone https://github.com/mohammed761-dl/SmartCar_Price_Prediction.git
 cd SmartCar_Price_Prediction
 
 # Install dependencies
@@ -326,5 +326,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
 
 **Built for the MLOps community**
+
+---
+
+**Author:** [Mohammed Cherkaoui](https://github.com/mohammed761-dl)
 
 </div>
